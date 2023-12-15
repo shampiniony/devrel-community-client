@@ -7,7 +7,8 @@ export const Login = () => {
     <>
       <h1
         onClick={() => {
-          login();
+          // login("vania", "vania2010");
+          eval("console.log('hello!')")
         }}
       >
         Login

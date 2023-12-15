@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { create } from 'zustand';
 
 interface AuthState {
@@ -6,10 +7,10 @@ interface AuthState {
   isAuthenticated: boolean | null;
   user: string | null;
 
-  login: () => void;
+  login: (username: string, password: string) => void;
   logout: () => void;
   loadUser: () => void;
-  checkAuthenticated: () => void;
+  verifyAuth: () => void;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -18,9 +19,25 @@ export const useAuthStore = create<AuthState>((set) => ({
   isAuthenticated: null,
   user: null,
 
-  login: () =>
+  login: async (username: string, password: string) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    const body = JSON.stringify({ username, password });
+
+    console.log(body)
+
+    const res = await axios.post(
+      `http://0.0.0.0/api/auth/token/login`,
+      body,
+      config
+    );
+
     set(() => {
-      console.log('yay!');
+      console.log(res);
 
       return {
         access: 'access',
@@ -28,7 +45,8 @@ export const useAuthStore = create<AuthState>((set) => ({
         isAuthenticated: true,
         user: 'mike',
       };
-    }),
+    });
+  },
   logout: () =>
     set(() => {
       console.log('yay!');
@@ -51,7 +69,7 @@ export const useAuthStore = create<AuthState>((set) => ({
         user: 'mike',
       };
     }),
-  checkAuthenticated: () =>
+  verifyAuth: () =>
     set(() => {
       console.log('yay!');
 
