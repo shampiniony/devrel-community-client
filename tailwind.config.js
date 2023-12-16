@@ -17,6 +17,7 @@ export default {
         "primary": "#794DFD",
         "second-primary": "#1D2145",
         "dark": "#131420",
+        "light": "#4A4D6A",
         transparent: 'transparent',
         current: 'currentColor',
       },

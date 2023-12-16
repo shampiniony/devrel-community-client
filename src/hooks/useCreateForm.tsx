@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { IFormData, IField } from '../types/FormTypes';
 import { useSearchParams } from 'react-router-dom';
+import { Button } from '../components';
 
 export const useCreateForm = (form_data: IFormData) => {
   const [step, setStep] = useState(1);
@@ -18,7 +19,7 @@ export const useCreateForm = (form_data: IFormData) => {
     return acc;
   }, {});
 
-  console.log(initialValues)
+  console.log(initialValues);
 
   const validationSchema = Yup.object(
     form_data.fields.reduce((acc, field) => {
@@ -34,7 +35,6 @@ export const useCreateForm = (form_data: IFormData) => {
     onSubmit: async (values, { setSubmitting }) => {
       if (step === 1) {
         try {
-
           const response = await axios.post(
             'http://localhost/api/users/login/',
             {
@@ -85,7 +85,7 @@ export const useCreateForm = (form_data: IFormData) => {
       <div key={field.name}>
         <h1>{field.name.replace(/_/g, ' ')}</h1>
         <input
-          className='bg-primary w-full rounded-md p-2'
+          className='bg-second-primary border-[1px] border-primary w-full rounded-md p-2'
           type='text'
           name={field.name}
           onChange={formik.handleChange}
@@ -103,36 +103,57 @@ export const useCreateForm = (form_data: IFormData) => {
         onSubmit={formik.handleSubmit}
         className='w-3/4 mx-auto pt-4 flex flex-col gap-5'
       >
-        {( form_data.fields.length && step === 1) ? (
+        {form_data.fields.length && step === 1 ? (
           <>
             <h1>Email</h1>
             <input
-              className='bg-primary w-full rounded-md p-2'
+              className='bg-second-primary border-[1px] border-primary w-full rounded-md p-2'
               type='email'
               name='email'
               onChange={formik.handleChange}
               //@ts-ignore
               value={formik.values.email}
             />
-            <button
+            {/* <button
               type='submit'
               className='w-full h-10 flex items-center justify-center cursor-pointer border rounded-lg'
             >
               Далее
-            </button>
+            </button> */}
+            <Button
+              className='font-bold w-full h-10 flex items-center justify-center cursor-pointer rounded-lg'
+              onClick={() => {
+                formik.handleSubmit();
+              }}
+              bgVariant={'gradient-fill'}
+            >
+              Далее
+            </Button>
           </>
-        ): ""}
+        ) : (
+          ''
+        )}
         {step === 2 && <>Пройдите по ссылке на почте</>}
         {step === 3 && form_data.fields.map((field) => renderField(field))}
         {step === 3 && (
-          <div
-            className='w-full h-10 flex items-center justify-center cursor-pointer border rounded-lg'
+          // <Button
+          //   className='w-full h-10 flex items-center justify-center cursor-pointer border rounded-lg'
+          //   onClick={() => {
+          //     formik.handleSubmit();
+          //   }}
+          //   bgVariant={'inherit'}
+          // >
+          //   Войти
+          // </Button>
+          <Button
+            className='font-bold w-full h-10 flex items-center justify-center cursor-pointer rounded-lg'
             onClick={() => {
               formik.handleSubmit();
             }}
+            bgVariant={'gradient-fill'}
           >
-            Войти
-          </div>
+            Далее
+          </Button>
         )}
       </form>
     </>
