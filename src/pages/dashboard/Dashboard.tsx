@@ -29,9 +29,9 @@ export const Dashboard = () => {
     <div className='flex w-full h-[100vh]'>
       <div className='h-full bg-dark w-96 flex flex-col justify-center items-center'>
         <div className='flex text-white gap-5 flex-col mr-5'>
-          <NavbarItem src={people} text='Аудитория' path='/dashboard/profile' />
-          <NavbarItem src={mic} text='Мероприятия' path='/dashboard/settings' />
-          <NavbarItem src={mail} text='Рассылки' path='/dashboard/reports' />
+          <NavbarItem src={people} text='Аудитория' path='/dashboard/profile'/>
+          <NavbarItem src={mic} text='Мероприятия' path='/dashboard/settings'/>
+          <NavbarItem src={mail} text='Рассылки' path='/dashboard/reports'/>
           <NavbarItem src={book} text='Сми' path='/dashboard/mass-media'/>
         </div>
       </div>

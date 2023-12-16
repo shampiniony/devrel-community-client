@@ -4,7 +4,7 @@ import { Navbar } from './modules';
 
 const router = createBrowserRouter([
   {
-    path: '/dashboard/:section?',
+    path: '/dashboard/:section?/:subsection?',
     element: <Dashboard/>,
   },
 ]);

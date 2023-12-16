@@ -1,16 +1,15 @@
 import { motion } from 'framer-motion';
 import React from 'react'
-import { twMerge } from 'tailwind-merge';
+import { Link } from 'react-router-dom';
+
 
 interface IButton {
   children: string;
   bgVariant: 'inherit' | 'gradient' | 'primary' | 'gradient-fill';
-  className?: string;
-  disabled?: boolean;
-  onClick?: () => void;
+  to: string;
 }
 
-export const Button: React.FC<IButton> = (props) => {
+export const ButtonLink: React.FC<IButton> = (props) => {
   let bgVariant = '';
 
   switch (props.bgVariant) {
@@ -31,26 +30,26 @@ export const Button: React.FC<IButton> = (props) => {
   }
 
   return props.bgVariant === 'gradient' ? (
-    <motion.button
+    <motion.div
       className={`min-w-32 p-[1px] my-1 rounded-lg ${bgVariant}`}
-      onClick={props.onClick}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      disabled={props.disabled}
     >
       <div className='bg-second-primary py-2 px-4 rounded-lg text-[#9D62D9]'>
-        { props.children }
+        <Link to={props.to}>
+          { props.children }
+        </Link>
       </div>
-    </motion.button>
+    </motion.div>
   ) : (
-    <motion.button
-      className={twMerge(`min-w-32 px-4 py-[9px] my-1 rounded-lg ${bgVariant}`, props.className)}
-      onClick={props.onClick}
+    <motion.div
+      className={`min-w-32 px-4 py-[9px] my-1 rounded-lg ${bgVariant}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      disabled={props.disabled}
     >
-      { props.children }
-    </motion.button>
+      <Link to={props.to}>
+        { props.children }
+      </Link>
+    </motion.div>
   );
 }

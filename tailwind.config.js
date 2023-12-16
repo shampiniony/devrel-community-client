@@ -1,6 +1,4 @@
-import colors from "tailwindcss/colors";
-import type { Config } from "tailwindcss";
-
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -8,13 +6,19 @@ export default {
       'green': '#0FE873',
       'red': '#F14C4C',
       'violet': '#B17CFF',
+      'yellow': '#F9C82F',
+      'orange': '#FE9D2A',
       'blue': '#15A3F1',
+      'slate': '#94a3b8',
+      'gray': '#4A4D6A',
     },
     extend: {
       colors: {
         "primary": "#794DFD",
         "second-primary": "#1D2145",
         "dark": "#131420",
+        transparent: 'transparent',
+        current: 'currentColor',
       },
       backgroundImage: {
         'search-field': 'url("./assets/search.svg")',
@@ -31,4 +35,5 @@ export default {
     },
   },
   plugins: [],
-} satisfies Config;
+}
+
