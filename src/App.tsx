@@ -1,10 +1,13 @@
 import './App.css'
+import { Navbar } from '@/modules/'
+import { Layout } from './Layout'
 
 function App() {
   return (
-    <h1 className='text-3xl'>
-      Hello world!!!
-    </h1>
+    <div className='font-poppins bg-'>
+      <Navbar/>
+      <Layout>hell</Layout>
+    </div>
   )
 }
 

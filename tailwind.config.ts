@@ -6,23 +6,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: { ...colors.lime, DEFAULT: lime[600] },
-        "text-primary": {
-          DEFAULT: "#03045E",
-        },
-        "second-primary": {
-          DEFAULT: "#e5e7eb",
-        },
-        detail: {
-          DEFAULT: "#474306",
-        },
+        "primary": "#794DFD",
+        "second-primary": "#1d2145",
+      },
+      backgroundImage: {
+        'search-field': 'url("./assets/search.svg")',
+      },
+      backgroundPosition: {
+        'left-with-space': '5%',
       },
       animation: {
         "spin-slow": "spin 10s linear infinite",
       },
     },
     fontFamily: {
-      forNumbers: ["Graduate", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
     },
   },
   plugins: [],
