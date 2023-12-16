@@ -4,6 +4,12 @@ import type { Config } from "tailwindcss";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    colors: {
+      'green': '#0FE873',
+      'red': '#F14C4C',
+      'violet': '#B17CFF',
+      'blue': '##15A3F1',
+    },
     extend: {
       colors: {
         // primary: { ...colors.indigo, DEFAULT: indigo[900] },
