@@ -1,13 +1,26 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { FormPage } from './pages/FormPage';
+import { Dashboard } from 'pages/dashboard/Dashboard';
+import { Navbar } from 'modules/header/components/navbar';
 
 const router = createBrowserRouter([
   {
     path: '/forms/:form_id',
     element: <FormPage></FormPage>,
   },
+  {
+    path: '/dashboard/:section?/:subsection?',
+    element: <Dashboard/>,
+  },
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Navbar/>
+      <main className='pt-16'>
+        <RouterProvider router={router} />
+      </main>
+    </>
+  )
 }
