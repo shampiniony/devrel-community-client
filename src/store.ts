@@ -16,8 +16,8 @@ interface AuthState {
 export const useAuthStore = create<AuthState>((set) => ({
   access: localStorage.getItem('access'),
   refresh: localStorage.getItem('refresh'),
-  isAuthenticated: null,
-  user: null,
+  isAuthenticated: true,
+  user: "mike",
 
   login: async (username: string, password: string) => {
     const config = {
@@ -27,17 +27,14 @@ export const useAuthStore = create<AuthState>((set) => ({
     };
 
     const body = JSON.stringify({ username, password });
-
-    console.log(body)
-
-    const res = await axios.post(
-      `http://0.0.0.0/api/auth/token/login`,
-      body,
-      config
-    );
+    // const res = await axios.post(
+    //   `http://0.0.0.0/api/auth/token/login`,
+    //   body,
+    //   config
+    // );
 
     set(() => {
-      console.log(res);
+      // console.log(res);
 
       return {
         access: 'access',
@@ -49,12 +46,10 @@ export const useAuthStore = create<AuthState>((set) => ({
   },
   logout: () =>
     set(() => {
-      console.log('yay!');
-
       return {
         access: 'access',
         refresh: 'refresh',
-        isAuthenticated: true,
+        isAuthenticated: false,
         user: 'mike',
       };
     }),
@@ -71,8 +66,6 @@ export const useAuthStore = create<AuthState>((set) => ({
     }),
   verifyAuth: () =>
     set(() => {
-      console.log('yay!');
-
       return {
         access: 'access',
         refresh: 'refresh',

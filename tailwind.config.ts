@@ -1,4 +1,4 @@
-import colors, { lime } from "tailwindcss/colors";
+import colors from "tailwindcss/colors";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -6,23 +6,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: { ...colors.lime, DEFAULT: lime[600] },
+        // primary: { ...colors.indigo, DEFAULT: indigo[900] },
+        "primary": {
+          DEFAULT: "#1D2145",
+        },
         "text-primary": {
-          DEFAULT: "#03045E",
+          DEFAULT: "#FFFFFF",
         },
         "second-primary": {
-          DEFAULT: "#e5e7eb",
+          DEFAULT: "#131420",
         },
         detail: {
-          DEFAULT: "#474306",
+          DEFAULT: "#343858",
         },
+        ...colors
       },
       animation: {
         "spin-slow": "spin 10s linear infinite",
       },
     },
     fontFamily: {
-      forNumbers: ["Graduate", "sans-serif"],
+      forNumbers: ["Inter", "sans-serif"],
     },
   },
   plugins: [],
