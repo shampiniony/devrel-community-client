@@ -8,7 +8,7 @@ export default {
       'green': '#0FE873',
       'red': '#F14C4C',
       'violet': '#B17CFF',
-      'blue': '##15A3F1',
+      'blue': '#15A3F1',
     },
     extend: {
       colors: {
