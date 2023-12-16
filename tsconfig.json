@@ -32,6 +32,7 @@
       "@/assets/*": ["assets/index"],
       "@/styles/*": ["styles/index"],
       "@/constants/*": ["constants/index"],
+      "@/pages/*": ["pages/index"],
     }
   },
   "include": ["src"],

@@ -1,10 +1,14 @@
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { FormPage } from './pages/FormPage';
 
 function App() {
   return (
-    <h1 className='text-3xl'>
-      Hello world!!!
-    </h1>
+    <BrowserRouter>
+      <Routes>
+        {/* Other routes... */}
+        <Route path="/forms/:form_id" element={<FormPage></FormPage>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
