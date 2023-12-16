@@ -26,7 +26,7 @@ export default function App() {
   return (
     <div>
       <Navbar />
-      <main className='pt-16'>
+      <main>
         <RouterProvider router={router} />
       </main>
     </div>
