@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { IFormData, IField } from '../models/FormTypes';
+import { IFormData, IField } from '../types/FormTypes';
 import { useSearchParams } from 'react-router-dom';
 
 export const useCreateForm = (form_data: IFormData) => {

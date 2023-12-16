@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { IFormData } from '../models/FormTypes';
+import { IFormData } from '../../types/FormTypes';
 import axios from 'axios';
-import { useCreateForm } from '../hooks/useCreateForm';
+import { useCreateForm } from '../../hooks/useCreateForm';
 
 export const FormPage = () => {
   let { form_id } = useParams();

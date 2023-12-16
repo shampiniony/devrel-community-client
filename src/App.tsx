@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { FormPage } from './pages/FormPage';
-import { Dashboard } from 'pages/dashboard/Dashboard';
-import { Navbar } from 'modules/header/components/navbar';
+import { FormPage } from './pages/forms/form';
+import { Dashboard } from './pages/dashboard/Dashboard';
+import { Navbar } from './modules/header/components/navbar';
 
 const router = createBrowserRouter([
   {
