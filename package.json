@@ -10,12 +10,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.3",
+    "@types/d3": "^7.4.3",
+    "@visx/gradient": "^3.3.0",
+    "@visx/group": "^3.3.0",
+    "@visx/legend": "^3.5.0",
+    "@visx/mock-data": "^3.3.0",
+    "@visx/scale": "^3.5.0",
+    "@visx/shape": "^3.5.0",
+    "axios": "^1.6.2",
     "framer-motion": "^10.16.16",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router": "^6.21.0",
+    "react-router-dom": "^6.21.0",
     "tailwind-colors": "^1.1.0",
-    "tailwind-merge": "^2.1.0"
+    "tailwind-merge": "^2.1.0",
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
     "@types/node": "^20.10.4",

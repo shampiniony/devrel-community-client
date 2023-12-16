@@ -1,14 +1,24 @@
-import './App.css'
-import { Navbar } from '@/modules/'
-import { Layout } from './Layout'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Dashboard } from './pages/dashboard/Dashboard';
+import { Navbar } from './modules';
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: '/dashboard/:section?',
+    element: <Dashboard/>,
+  },
+]);
+
+export default function App() {
   return (
-    <div className='font-poppins bg-'>
+    <>
       <Navbar/>
-      <Layout>hell</Layout>
-    </div>
+      <main className='pt-16'>
+        <RouterProvider router={router} />
+      </main>
+    </>
   )
 }
 
-export default App
+{/* <Navbar/>
+      <Layout>hell</Layout> */}
