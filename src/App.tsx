@@ -3,7 +3,7 @@ import { FormPage } from './pages/FormPage';
 
 const router = createBrowserRouter([
   {
-    path: '/forms/:id',
+    path: '/forms/:event_id',
     element: <FormPage></FormPage>,
   },
 ]);

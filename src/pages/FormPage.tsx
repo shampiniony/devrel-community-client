@@ -1,7 +1,11 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 
 export const FormPage = () => {
-  let { form_id } = useParams();
+  let { event_id } = useParams();
+  let [searchParams] = useSearchParams();
+  let token = searchParams.get("token");
 
-  return <>{form_id}</>;
+  return <div className='w-[100vw] h-[100vw] bg-primary'>
+  
+  </div>;
 };
