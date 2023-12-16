@@ -1,11 +1,10 @@
-import './App.css'
-import { Plugins } from './pages/Plugins'
+import CodeEditor from './pages/CodeEditor'
 
 function App() {
   return (
     <h1 className='text-3xl'>
       Hello world!!!
-      <Plugins></Plugins>
+      <CodeEditor></CodeEditor>
     </h1>
   )
 }
