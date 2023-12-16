@@ -1,5 +1,5 @@
-import error from './../assets/elements/404.png'
-import { Button } from '../components';
+import error from './../../assets/elements/404.png'
+import { Button } from '../../components';
 
 export const Error404 = () => {
   return (
