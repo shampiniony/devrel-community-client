@@ -1,15 +1,13 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { FormPage } from './pages/FormPage';
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        {/* Other routes... */}
-        <Route path="/forms/:form_id" element={<FormPage></FormPage>} />
-      </Routes>
-    </BrowserRouter>
-  )
-}
+const router = createBrowserRouter([
+  {
+    path: '/forms/:id',
+    element: <FormPage></FormPage>,
+  },
+]);
 
-export default App
+export default function App() {
+  return <RouterProvider router={router} />;
+}
