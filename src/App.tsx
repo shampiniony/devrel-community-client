@@ -1,10 +1,15 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { FormPage } from './pages/forms/form';
 import { Dashboard } from './pages/dashboard/Dashboard';
 import { Navbar } from './modules';
 import { Error404 } from './pages/errors/Error404';
 import { ErrorMobile } from './pages/errors/ErrorMobile';
 
 const router = createBrowserRouter([
+  {
+    path: '/forms/:form_id',
+    element: <FormPage></FormPage>,
+  },
   {
     path: '/dashboard/:section?/:subsection?',
     element: <Dashboard />,
@@ -26,9 +31,4 @@ export default function App() {
       </div>
     </div>
   );
-}
-
-{
-  /* <Navbar/>
-      <Layout>hell</Layout> */
 }

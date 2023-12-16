@@ -1,7 +1,6 @@
-import React from 'react'
 import { INavItem, NavItem } from './nav-item'
-import logo from '@/assets/logo.svg'
-import { Search } from '@/components/search'
+import logo from '../../../assets/logo.svg'
+import { Search } from '../../../components/search'
 
 const navItems: INavItem[] = [
   {
