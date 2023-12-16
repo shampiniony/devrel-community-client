@@ -1,11 +1,13 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Dashboard } from './pages/dashboard/Dashboard';
 import { Navbar } from './modules';
+import { Error404 } from './pages/Error404';
 
 const router = createBrowserRouter([
   {
     path: '/dashboard/:section?/:subsection?',
     element: <Dashboard/>,
+    errorElement: <Error404/>,
   },
 ]);
 
