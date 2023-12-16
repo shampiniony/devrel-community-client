@@ -3,7 +3,7 @@ import { Dashboard } from './pages/dashboard/Dashboard';
 
 const router = createBrowserRouter([
   {
-    path: '/dashboard',
+    path: '/dashboard/:section?',
     element: <Dashboard></Dashboard>,
   },
 ]);
