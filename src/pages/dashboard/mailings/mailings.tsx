@@ -1,6 +1,7 @@
 import sort from '@/assets/icons/sort.svg';
 import filter from '@/assets/icons/filter.svg';
 import fileExport from '@/assets/icons/export.svg';
+import { Button } from '@/components/index';
 
 const Icon = ({ src }: { src: string }) => {
   return <li className='w-6'><img src={ src }/></li>
@@ -11,9 +12,9 @@ export const Mailings = () => {
     <section className='w-4/5 mx-auto'>
       <div>
         <h3 className='text-2xl'>Ваши рассылки</h3>
-        <div className='flex'>
-          <></>
-          <></>
+        <div className='flex gap-x-6'>
+          <Button bgVariant='primary'>Создать рассылку</Button>
+          <Button bgVariant='gradient'>Добавить контакты</Button>
         </div>
         <div className='flex justify-between items-center'>
           <ul className='flex text-lg gap-x-8'>
