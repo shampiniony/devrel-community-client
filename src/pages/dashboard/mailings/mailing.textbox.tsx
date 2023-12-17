@@ -30,11 +30,11 @@ export const TextBox = () => {
               sendMail(selected, {
                 text: 'string',
                 subject: 'string',
-                message: 'string',
-                html_message: 'string',
+                message: message,
+                html_message: message,
               });
             } else {
-              sendTelegram(selected, "hello")
+              sendTelegram(selected, message)
             }
             setSelected([]);
           }}
