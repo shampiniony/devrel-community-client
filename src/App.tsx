@@ -1,11 +1,36 @@
-import './App.css'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { FormPage } from './pages/forms/form';
+import { Dashboard } from './pages/dashboard/Dashboard';
+import { Error404 } from './pages/errors/Error404';
+import { Toaster } from 'react-hot-toast';
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <></>,
+    errorElement: <Error404 />,
+  },
+  {
+    path: '/forms/:form_id',
+    element: <FormPage></FormPage>,
+    errorElement: <Error404 />,
+  },
+  {
+    path: '/dashboard/:section?/:subsection?',
+    element: <Dashboard />,
+    errorElement: <Error404 />,
+  },
+]);
+
+export default function App() {
   return (
-    <h1 className='text-3xl'>
-      Hello world!
-    </h1>
-  )
+    <div>
+      <RouterProvider router={router} />
+      <Toaster
+        toastOptions={{
+          className: 'bg-second-primary text-white',
+        }}
+      />
+    </div>
+  );
 }
-
-export default App
