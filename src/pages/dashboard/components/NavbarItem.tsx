@@ -1,20 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';  
-import { twMerge } from 'tailwind-merge';
 
 interface INavbarItemProps {
   text: string;
   path: string;
   src: string;
-}
-
-const variants = {
-  none: {
-    color: 'white'
-  },
-  hover: {
-    color: '#f0f0f0'  
-  }
 }
 
 export const NavbarItem = (props: INavbarItemProps) => {

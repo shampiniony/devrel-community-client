@@ -1,14 +1,6 @@
-import React from 'react'
+
 
 export const GradientLine = ({}) => {
-  const [ percent1, percent2, percent3 ] = [0.3, 0.3, 0.4]
-
-  const gradientStyle = {
-    width: '100px',
-    height: '30px',
-    background: `linear-gradient(90deg, black 0%, black ${percent1}, red ${percent1}, red ${percent2}, yellow ${percent2}, yellow 100%)`,
-  };
-
   return (
     <div
       style={{

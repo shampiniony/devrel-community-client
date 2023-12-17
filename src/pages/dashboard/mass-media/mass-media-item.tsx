@@ -1,9 +1,8 @@
-import React from 'react'
 import { GradientLine } from './gradient-line'
 import { motion } from 'framer-motion'
 import { Box } from '../components/box'
 
-const Button = ({ children, onClick }: { children: string, onClick?: () => void }) => {
+const Button = ({ children }: { children: string, onClick?: () => void }) => {
   return (
     <motion.button
       whileHover={{ 

@@ -1,7 +1,7 @@
 import { useMailingStore } from './../../../store';
 
 export const UserData = () => {
-  const [selected, setSelected] = useMailingStore((state) => [
+  const [selected] = useMailingStore((state) => [
     state.selected_users,
     state.setSelectedUsers,
   ]);

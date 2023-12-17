@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
 export interface ISmartUrl {
@@ -94,7 +94,7 @@ const addUrl = (name: string, url: string) => {
       name: name,
       link: url,
     })
-    .then((res) => {
+    .then(() => {
       toast.success(`Added new hotlink!`);
     })
     .catch(() => {
@@ -105,7 +105,7 @@ const addUrl = (name: string, url: string) => {
 const delUrl = (id: string) => {
   axios
     .delete(`http://reldev.shampiniony.ru/api/ref/manage/${id}`)
-    .then((res) => {
+    .then(() => {
       toast.success(`Removed hotlink!`);
     })
     .catch(() => {

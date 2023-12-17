@@ -1,4 +1,3 @@
-import React from 'react'
 import { EmotionLabel, IEmotionLabel } from './emotion-label'
 
 const emotionLabels: IEmotionLabel[] = [

@@ -11,12 +11,14 @@ export const Events = () => {
   const getEvents = () => {
     axios.get(`http://reldev.shampiniony.ru/api/events/`).then((res) => {
       setEvents(res.data as IEvent[]);
+      console.log(res.data)
     })
   };
 
   useEffect(() => {
     getEvents();
   },[]);
+
 
   return (
     <div className='flex w-full h-full gap-5 pb-10'>

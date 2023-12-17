@@ -83,9 +83,9 @@ export const Forms = (props: IFormsProperties) => {
   );
 };
 
-const createForm = (data: IFormData, event_id: number) => {
-  axios.post(`http://reldev.shampiniony.ru/api/formfields/`, {
-    data: data,
-    event: event_id,
-  });
-};
+// const createForm = (data: IFormData, event_id: number) => {
+//   axios.post(`http://reldev.shampiniony.ru/api/formfields/`, {
+//     data: data,
+//     event: event_id,
+//   });
+// };

@@ -62,7 +62,7 @@ const sendMail = (users: IUser[], mail: IMail) => {
       }),
       mail: mail,
     })
-    .then((res) => {
+    .then(() => {
       toast.success(`Mail sent!`);
     })
     .catch(() => {
@@ -78,7 +78,7 @@ const sendTelegram = (users: IUser[], message: string) => {
       }),
       message: message,
     })
-    .then((res) => {
+    .then(() => {
       toast.success(`Telegram message sent!`);
     })
     .catch(() => {
