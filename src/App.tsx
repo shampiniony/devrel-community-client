@@ -1,13 +1,14 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { FormPage } from './pages/forms/form';
 import { Dashboard } from './pages/dashboard/Dashboard';
+import { WelcomePage } from './pages/index/WelcomePage';
 import { Error404 } from './pages/errors/Error404';
 import { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <></>,
+    element: <WelcomePage></WelcomePage>,
     errorElement: <Error404 />,
   },
   {

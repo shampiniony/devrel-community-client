@@ -21,7 +21,7 @@ export const Navbar = () => {
     <nav className='fixed w-full py-4'>
       <div className='px-5 mx-auto flex items-center justify-between max-w-[1280px]'>
         <div className='flex w-[70%] lg:w-3/5 xl:w-1/2 justify-between items-center'>
-          <a href='#' className='flex items-center gap-x-2'>
+          <a href='/' className='flex items-center gap-x-2'>
             <img src={logo} />
             <h3 className='text-xl lg:text-2xl'>DevMate</h3>
           </a>
