@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { IUser } from 'types/MailingTypes';
 import { create } from 'zustand';
 
 interface AuthState {
@@ -13,11 +14,16 @@ interface AuthState {
   verifyAuth: () => void;
 }
 
+interface MailingState {
+  selected_users: IUser[];
+  setSelectedUsers: (users: IUser[]) => void;
+}
+
 export const useAuthStore = create<AuthState>((set) => ({
   access: localStorage.getItem('access'),
   refresh: localStorage.getItem('refresh'),
   isAuthenticated: true,
-  user: "mike",
+  user: 'mike',
 
   login: async (username: string, password: string) => {
     const config = {
@@ -71,6 +77,17 @@ export const useAuthStore = create<AuthState>((set) => ({
         refresh: 'refresh',
         isAuthenticated: true,
         user: 'mike',
+      };
+    }),
+}));
+
+export const useMailingStore = create<MailingState>((set) => ({
+  selected_users: [],
+  setSelectedUsers: (selected_users) =>
+    set(() => {
+      console.log(selected_users)
+      return {
+        selected_users: selected_users,
       };
     }),
 }));
