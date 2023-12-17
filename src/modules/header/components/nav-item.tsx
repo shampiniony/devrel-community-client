@@ -1,5 +1,5 @@
 import React from 'react'
-import './nav-item-animation.css'
+import { Link } from 'react-router-dom';  
 
 export interface INavItem {
   children: string;
@@ -9,7 +9,7 @@ export interface INavItem {
 export const NavItem: React.FC<INavItem> = (props) => {
   return (
     <li className=''>
-      <a className='text-decor-link' href={ props.to }>{ props.children }</a>
+      <Link to={ props.to }>{ props.children }</Link>
     </li>
   )
 }

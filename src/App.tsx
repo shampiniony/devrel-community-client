@@ -1,7 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { FormPage } from './pages/forms/form';
 import { Dashboard } from './pages/dashboard/Dashboard';
-import { Navbar } from './modules';
 import { Error404 } from './pages/errors/Error404';
 import { Toaster } from 'react-hot-toast';
 
@@ -26,10 +25,7 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <div>
-      <Navbar />
-      <main>
-        <RouterProvider router={router} />
-      </main>
+      <RouterProvider router={router} />
       <Toaster
         toastOptions={{
           className: 'bg-second-primary text-white',

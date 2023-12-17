@@ -2,11 +2,11 @@ import axios from 'axios';
 import { useCallback, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
-interface ISmartUrl {
+export interface ISmartUrl {
   id: string;
   link: string;
   name: string;
-  cout: number;
+  count: number;
 }
 
 export const SmartUrl = () => {
@@ -15,7 +15,7 @@ export const SmartUrl = () => {
   const [name, setName] = useState('');
 
   const updateUrls = () => {
-    axios.get(`http://localhost/api/ref/manage/`).then((res) => {
+    axios.get(`http://reldev.shampiniony.ru/api/ref/manage/`).then((res) => {
       const data = res.data as ISmartUrl[];
       setUrls(data);
     });
@@ -59,15 +59,15 @@ export const SmartUrl = () => {
         </div>
       </div>
       {urls.length > 0 ? (
-        <div className='flex flex-col gap-4 overflow-scroll max-h-30'>
+        <div className='flex flex-col gap-4 overflow-scroll max-h-30 no-scrollbar'>
           {urls.map((url) => {
             return (
               <div key={url.id} className='flex flex-row gap-1 justify-between'>
                 <div className='px-5 py-2 rounded-l-lg w-full bg-primary'>
                   {url.name}
                 </div>
-                <div className='p-2 w-fit bg-primary'>{url.id}</div>
-                <div className='p-2 w-full bg-primary'>{url.id}</div>
+                <div className='p-2 w-fit bg-primary overflow-hidden'>{`http://reldev.shampiniony.ru/api/ref/go/${url.id}`}</div>
+                <div className='p-2 w-full bg-primary'>{url.link}</div>
                 <div
                   onClick={() => {
                     delUrl(url.id);
@@ -90,7 +90,7 @@ export const SmartUrl = () => {
 
 const addUrl = (name: string, url: string) => {
   axios
-    .post(`http://localhost/api/ref/manage/`, {
+    .post(`http://reldev.shampiniony.ru/api/ref/manage/`, {
       name: name,
       link: url,
     })
@@ -104,7 +104,7 @@ const addUrl = (name: string, url: string) => {
 
 const delUrl = (id: string) => {
   axios
-    .delete(`http://localhost/api/ref/manage/${id}`)
+    .delete(`http://reldev.shampiniony.ru/api/ref/manage/${id}`)
     .then((res) => {
       toast.success(`Removed hotlink!`);
     })

@@ -13,7 +13,7 @@ export const FormPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost/api/formfields/${form_id}/`)
+      .get(`http://reldev.shampiniony.ru/api/formfields/${form_id}/`)
       .then((res) => {
         setFeilds(res.data.data as IFormData);
       })
@@ -25,7 +25,7 @@ export const FormPage = () => {
   let form = useCreateForm(feilds);
 
   return (
-    <div className='my-20 mx-auto w-1/2 rounded-xl h-fit p-10 bg-light border-[#A5A6B5] border-2'>
+    <div className='my-20 mx-auto w-1/2 rounded-xl h-fit p-10 bg-second-primary'>
       {form}
     </div>
   );

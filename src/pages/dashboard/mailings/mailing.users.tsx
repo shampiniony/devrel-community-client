@@ -11,15 +11,15 @@ export const Users = () => {
   ]);
 
   useEffect(() => {
-    axios.get(`http://localhost/api/users/`).then((res) => {
+    axios.get(`http://reldev.shampiniony.ru/api/users/`).then((res) => {
       setUsers(res.data as IUser[]);
     });
   }, []);
 
   return (
-    <div className='col-span-2 h-full w-full bg-second-primary rounded-xl p-4 flex flex-col gap-4'>
-      <div className='h-12 w-full bg-primary rounded-lg'></div>
-      <div className='h-full w-full bg-primary rounded-lg px-5 py-2 overflow-scroll'>
+    <div className='h-full w-2/6 bg-second-primary rounded-xl p-4 flex flex-col gap-4'>
+      <div className='h-1/3 w-full bg-primary rounded-lg'></div>
+      <div className='h-full w-full bg-primary rounded-lg px-5 py-2 overflow-y-scroll no-scollbar'>
         {users.map((user) => {
           return (
             <div

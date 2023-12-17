@@ -36,7 +36,7 @@ export const useCreateForm = (form_data: IFormData) => {
       if (step === 1) {
         try {
           const response = await axios.post(
-            'http://localhost/api/users/login/',
+            'http://reldev.shampiniony.ru/api/users/login/',
             {
               // @ts-ignore
               email: values.email,
@@ -57,7 +57,7 @@ export const useCreateForm = (form_data: IFormData) => {
         // Handle submission for step 2
         try {
           const response = await axios.post(
-            'http://localhost/api/user-by-token/',
+            'http://reldev.shampiniony.ru/api/user-by-token/',
             {
               headers: {
                 'Content-Type': 'application/json',

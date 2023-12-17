@@ -1,14 +1,14 @@
 import { Users } from './mailing.users';
-import { SmartUrl } from '../components/smarturl';
 import { TextBox } from './mailing.textbox';
+import { UserData } from './maling.userdata';
 
 export const Mailing = () => {
   return (
-    <div className='grid grid-cols-5 w-full h-full gap-10 pb-10'>
+    <div className='flex flex-row w-full h-full gap-5 pb-10'>
       <Users />
-      <div className='col-span-3 h-full w-full rounded-lg flex flex-col gap-10'>
+      <div className='h-full w-4/6 rounded-lg flex flex-col gap-5'>
         <TextBox />
-        <SmartUrl />
+        <UserData/>
       </div>
     </div>
   );

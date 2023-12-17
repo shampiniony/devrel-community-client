@@ -3,7 +3,6 @@ import { useMailingStore } from './../../../store';
 import toast from 'react-hot-toast';
 import { IMail, IUser } from './../../../types/MailingTypes';
 import { useState } from 'react';
-import { bool } from 'yup';
 
 export const TextBox = () => {
   const [selected, setSelected] = useMailingStore((state) => [
@@ -14,7 +13,7 @@ export const TextBox = () => {
   const [type, setType] = useState<'Mail' | 'Telegram'>('Mail');
 
   return (
-    <div className='h-full w-full bg-second-primary rounded-xl p-4 gap-4 flex flex-col'>
+    <div className='h-3/5 w-full bg-second-primary rounded-xl p-4 gap-4 flex flex-col'>
       <div className='h-12 rounded-lg flex justify-end gap-5 cursor-pointer'>
         <div
           onClick={() => {
@@ -49,7 +48,7 @@ export const TextBox = () => {
         onChange={(e) => {
           setMessage(e.target.value);
         }}
-        className='p-5 text-2xl h-full w-full bg-primary rounded-lg'
+        className='p-5 text-2xl h-full w-full bg-primary rounded-lg resize-none'
       ></textarea>
     </div>
   );
@@ -57,7 +56,7 @@ export const TextBox = () => {
 
 const sendMail = (users: IUser[], mail: IMail) => {
   axios
-    .post(`http://localhost/api/mailer/send-mailing/`, {
+    .post(`http://reldev.shampiniony.ru/api/mailer/send-mailing/`, {
       emails: users.flatMap((user) => {
         return user.email;
       }),
@@ -73,7 +72,7 @@ const sendMail = (users: IUser[], mail: IMail) => {
 
 const sendTelegram = (users: IUser[], message: string) => {
   axios
-    .post(`http://localhost/api/mailer/send-tg-message/`, {
+    .post(`http://reldev.shampiniony.ru/api/mailer/send-tg-message/`, {
       tg_ids: users.flatMap((user) => {
         return user.telegram_id;
       }),
