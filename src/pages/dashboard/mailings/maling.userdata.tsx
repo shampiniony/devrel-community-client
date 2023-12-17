@@ -9,7 +9,7 @@ export const UserData = () => {
   return (
     <div className='h-full w-full bg-second-primary rounded-xl p-4 gap-4 flex flex-col'>
       {selected.map( (user) => {
-        return <>{user.first_name}</>
+        return <div className='m-5'>{user.first_name}</div>
       })}
     </div>
   );

@@ -10,7 +10,7 @@ export const Analytics = () => {
       <div className='flex flex-col h-full w-5/12 gap-5'>
         <Cities />
         <div className='h-1/2 w-full bg-second-primary rounded-xl p-5'>
-          <h1 className='font-bold text-3xl'>plugins</h1>
+          <h1 className='font-bold text-3xl pb-2'>plugins</h1>
           <Plugins/>
         </div>
       </div>
